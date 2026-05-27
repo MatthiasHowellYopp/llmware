@@ -33,7 +33,7 @@ def is_valkey_available():
         port = ValkeyConfig.get_config("port")
 
         addresses = [NodeAddress(host=host, port=port)]
-        config = GlideClientConfiguration(addresses=addresses)
+        config = GlideClientConfiguration(addresses=addresses, client_name="llmware_embedding_client")
         client = GlideClient.create(config)
 
         # Ping to verify connectivity
